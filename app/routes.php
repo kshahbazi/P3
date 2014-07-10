@@ -15,3 +15,11 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/lorem', function() {
+    return 'this is the Lorem Ipsum Generator';
+}); 
+
+Route::get('/random', function() {
+    return 'this is the Random User Generator';
+}); 
