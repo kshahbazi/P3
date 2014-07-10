@@ -31,8 +31,9 @@ Route::get('/environment', function() {
 Route::get('/new', function() {
 
     $view  = '<form method="POST">';
-    $view .= 'Title: <input type="text" name="title">';
-    $view .= '<input type="submit">';
+    $view .= 'Words: <input type="text" name="words">';
+    $view .= 'Paragraphs: <input type="text" name="paragraphs">';
+	$view .= '<input type="submit">';
     $view .= '</form>';
     return $view;
 
