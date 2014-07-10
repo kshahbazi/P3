@@ -23,3 +23,7 @@ Route::get('/lorem', function() {
 Route::get('/random', function() {
     return 'this is the Random User Generator';
 }); 
+
+Route::get('/environment', function() {
+    echo App::environment();
+});
