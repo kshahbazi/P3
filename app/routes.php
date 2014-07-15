@@ -13,35 +13,39 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
-Route::get('/lorem', function() {
-    return 'this is the Lorem Ipsum Generator';
+Route::get('ligenerator', function() {
+    //return URL::current(); // whereisit?
+	return View::make('ligenerator');
 }); 
 
-Route::get('/random', function() {
-    return 'this is the Random User Generator';
+Route::get('rugenerator', function() {
+    //return URL::current(); // whereisit?
+	return View::make('rugenerator');
 }); 
+
+Route::get('rugenerator/{number_of_users?}', function($number_of_users = null)
+{
+    
+});
+
+Route::filter('rugenerator', function()
+{
+    
+
+});
+
+Route::filter('ligenerator', function()
+{
+    if (Input::get('number_of_words_or_paragraphs') < 1)
+    {
+		return Redirect::to('rugenerator');
+    }
+});
+
 
 Route::get('/environment', function() {
     echo App::environment();
-});
-
-Route::get('/new', function() {
-
-    $view  = '<form method="POST">';
-    $view .= 'Words: <input type="text" name="words">';
-    $view .= 'Paragraphs: <input type="text" name="paragraphs">';
-	$view .= '<input type="submit">';
-    $view .= '</form>';
-    return $view;
-
-});
-
-Route::post('/new', function() {
-
-    $input =  Input::all();
-    print_r($input);
-
 });

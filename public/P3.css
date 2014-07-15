@@ -1,0 +1,74 @@
+html{
+	font-family:"Courier New", Helvetica, Courier, monospace;
+
+}
+
+body{
+	background-color:#FFC;
+	text-align:center;
+	margin:0 auto;
+	padding:0px;
+}
+
+img{
+	padding-left:3px;
+}
+
+a:link { color: black; }
+a:active { color:#009; }
+a:visited { color: black; }
+a:hover { color:#666; }
+
+.subhead{
+	font-family: Smokum;
+	font-size:2.5rem;
+	text-decoration:underline;
+}
+
+#container{
+	width:65%;
+	margin: 0 auto;
+	background-color:#FFF;
+	font-family: "Courier New", Courier, monospace;
+}
+
+#heading{
+	font-family: Smokum, "Courier New", cursive;
+	font-size:2.1rem;
+	font-weight:800;
+	background-color:#292;
+	border-bottom: 2px solid #00c;
+	color:#000;
+	text-align:right;
+	margin:0px;
+	padding: 5px;
+}
+
+#heading a{
+	text-decoration:none;
+}
+
+#mainContent p{
+	width:67%;
+	padding: 10px;
+	margin: 0 auto;
+	text-align:justify;
+	height:80%;
+	font-family: "Courier New", Courier, monospace;
+}
+
+#error{
+	font-size:.75em;
+	color:#900;
+	text-align:center;
+
+}
+
+#results{
+	font-size:2.1rem;
+	background-color:#FF695B;
+	color:#000;
+	text-align:center;
+	margin:15px 0px;
+	padding:15px;
+}
