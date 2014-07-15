@@ -28,8 +28,15 @@ Route::get('rugenerator', function() {
 
 Route::get('rugenerator/{number_of_users?}', function($number_of_users = null)
 {
-    
+    return "$number_of_users users.";
 });
+
+Route::post('rugenerator', function()
+{
+    $data = Input::all();
+    var_dump($data);
+});
+
 
 Route::filter('rugenerator', function()
 {
@@ -37,12 +44,15 @@ Route::filter('rugenerator', function()
 
 });
 
-Route::filter('ligenerator', function()
+Route::get('ligenerator/{number_of_words_or_paragraphs?}', function($number_of_words_or_paragraphs = null)
 {
-    if (Input::get('number_of_words_or_paragraphs') < 1)
-    {
-		return Redirect::to('rugenerator');
-    }
+    return "$number_of_words_or_paragraphs words or paragraphs.";
+});
+
+Route::post('ligenerator', function()
+{
+    $data = Input::all();
+    var_dump($data);
 });
 
 

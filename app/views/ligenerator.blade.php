@@ -7,7 +7,7 @@
 
 @section('content')
     <h1>This is the Lorem Ipsum</h1>
-	<form method="post">
+	<form method="POST">
 			<div id='lorem-form'>		 
 				<label for='number_of_words_or_paragraphs'>Generate words or paragraphs?</label><br>
 				<input type="text" name="number_of_words_or_paragraphs" value="5" id="number_of_words_or_paragraphs" maxlength="2"><br>
