@@ -19,7 +19,9 @@
 			<input type='submit' class='btn btn-default' value='Generate Users'>
             					
 	</form>
-        <p class='results'>
-			
-		</p>
+	@if(isset($results))
+        <div class='results'>
+			{{ $results }}
+		</div>
+	@endif
 @stop
