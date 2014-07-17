@@ -40,11 +40,8 @@ Route::post('rugenerator', function()
 		$random_users .= "<p>".$faker->name."</p>"	;	
 	}
 		
-//	print_r($random_users);
-return View::make('/rugenerator')->with('results',$random_users);
+	return View::make('/rugenerator')->with('results',$random_users);
 	
-	/*	return View::make('/rugenerator')
-		->with('results',$random_users);*/
 });
 
 
@@ -74,12 +71,7 @@ Route::post('ligenerator', function()
 			$lorem_text .= "<p>".$paragraphs[$i]."</p><br>"	;	
 	}
 	
-	//print_r($lorem_text);
-	
 	return View::make('/ligenerator')->with('results',$lorem_text);
-	
-	/*return View::make('/ligenerator')
-		->with('results',$results);*/
     
 });
 
