@@ -20,6 +20,6 @@
             					
 	</form>
         <p class='results'>
-			{{{ $results }}}
+			
 		</p>
 @stop
