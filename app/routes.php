@@ -16,45 +16,34 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+// create lorem ipsum page and make plain form
 Route::get('ligenerator', function() {
-    //return URL::current(); // whereisit?
-	return View::make('ligenerator');
+    return View::make('ligenerator');
 }); 
 
+// create random user generator page and make plain form
 Route::get('rugenerator', function() {
-    //return URL::current(); // whereisit?
 	return View::make('rugenerator');
 }); 
 
-Route::get('rugenerator/{number_of_users?}', function($number_of_users = null)
-{
-    return "$number_of_users users.";
-});
-
+// get user's input from form and generate 
+// the results for the random user generator
 Route::post('rugenerator', function()
 {
-    $data = Input::all();
-    var_dump($data);
+    $results = Input::get('number_of_users');
+	return View::make('rugenerator')
+		->with('results',$results);	
 });
 
-
-Route::filter('rugenerator', function()
-{
-    
-
-});
-
-Route::get('ligenerator/{number_of_words_or_paragraphs?}', function($number_of_words_or_paragraphs = null)
-{
-    return "$number_of_words_or_paragraphs words or paragraphs.";
-});
-
+// get user's input from form and generate 
+// the results for the lorem ipsum generator
 Route::post('ligenerator', function()
 {
-    $data = Input::all();
-    var_dump($data);
+	$results = Input::get('number_of_wp');
+	return View::make('/ligenerator')
+		->with('results',$results);
+    
 });
-
 
 Route::get('/environment', function() {
     echo App::environment();

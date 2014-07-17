@@ -7,7 +7,7 @@
 
 @section('content')
     <h1>This is the Random User Generator page</h1>
-	<form method="POST">
+	<form action="/rugenerator" method="POST">
 			<div id='user-form'>		 
 				<label for='number_of_users'># of Users</label><br>
 				<input type="text" name="number_of_users" value="5" id="number_of_users" maxlength="2"><br>
@@ -19,5 +19,7 @@
 			<input type='submit' class='btn btn-default' value='Generate Users'>
             					
 	</form>
-        <p class='results'>Sample</p>
+        <p class='results'>
+			{{{ $results }}}
+		</p>
 @stop
