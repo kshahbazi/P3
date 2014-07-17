@@ -37,7 +37,7 @@ Route::post('rugenerator', function()
 	//loop through to append as many users as requested to $random_users
 	for ($i=0; $i < $number_of_users; $i++)
 	{
-		$random_users .= "<p>".$faker->name."</p><br>"	;	
+		$random_users .= "<p>".$faker->name."</p>"	;	
 	}
 		
 	print_r($random_users);
@@ -74,9 +74,9 @@ Route::post('ligenerator', function()
 			$lorem_text .= "<p>".$paragraphs[$i]."</p><br>"	;	
 	}
 	
-	return View::make('/ligenerator')->with('results',$lorem_text);
+	print_r($lorem_text);
 	
-	/*print_r($lorem_text);
+	/*return View::make('/ligenerator')->with('results',$lorem_text);
 	
 	return View::make('/ligenerator')
 		->with('results',$results);*/
