@@ -27,6 +27,8 @@ Route::post('rugenerator', function()
 {
     // get form input , i.e. number of users 
 	$number_of_users = Input::get('number_of_users');
+	$include_dob = Input::get('include_dob');
+	$include_bio = Input::get('include_bio');
 	
 	// set the initial result to be empty
 	$random_users ="";
@@ -37,8 +39,20 @@ Route::post('rugenerator', function()
 	//loop through to append as many users as requested to $random_users
 	for ($i=0; $i < $number_of_users; $i++)
 	{
-		$random_users .= "<p>".$faker->name."</p>"	;	
+		$random_users .= "<h2>".$faker->name."</h2>"	;	
+		if(isset($include_dob))
+		{
+			$random_users .= "<span style='color:blue'>DOB: <em>".$faker->date($format = 'Y-m-d', $max = 'now')."</em></span><br>";
+		}
+		
+		if(isset($include_bio))
+		{
+			$random_users .= $faker->text."<br>";
+		}
+		$random_users .= "<hr style='width:30px'>"	;	
+		
 	}
+	
 		
 	return View::make('/rugenerator')->with('results',$random_users);
 	
