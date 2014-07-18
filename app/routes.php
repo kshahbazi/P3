@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+// the index, or first page, view
 Route::get('/', function()
 {
 	return View::make('index');
@@ -67,7 +67,6 @@ Route::post('rugenerator', function()
 });
 
 
-
 // create lorem ipsum page and make plain form
 Route::get('ligenerator', function() {
     return View::make('ligenerator');
@@ -93,10 +92,12 @@ Route::post('ligenerator', function()
 			$lorem_text .= "<p>".$paragraphs[$i]."</p><br>"	;	
 	}
 	
+	// append the generated text to the ligenerator page, within results	
 	return View::make('/ligenerator')->with('results',$lorem_text);
     
 });
 
+// see environment
 Route::get('/environment', function() {
     echo App::environment();
 });
