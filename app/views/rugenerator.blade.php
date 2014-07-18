@@ -1,12 +1,12 @@
 @extends('_master_P3')
 
 @section('title')
-    Random User 
+    Random User Generator
 @stop
 
 
 @section('content')
-    <h1>This is the Random User Generator page</h1>
+    <h1>Random User Generator</h1>
 	<form action="/rugenerator" method="POST">
 			<div id='user-form'>		 
 				<label for='number_of_users'># of Users</label><br>
@@ -20,7 +20,7 @@
             					
 	</form>
 	@if(isset($results))
-        <div class='results'>
+        <div class='result'>
 			{{ $results }}
 		</div>
 	@endif

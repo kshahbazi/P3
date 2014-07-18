@@ -1,7 +1,7 @@
 @extends('_master_P3')
 
 @section('title')
-    P3 - Welcome 
+    P3 - Developers' Best Friend
 @stop
 
 

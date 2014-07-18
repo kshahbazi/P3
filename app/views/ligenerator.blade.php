@@ -1,12 +1,12 @@
 @extends('_master_P3')
 
 @section('title')
-    Lorem Ipsum 
+    Lorem Ipsum Generator
 @stop
 
 
 @section('content')
-    <h1>This is the Lorem Ipsum</h1>
+    <h1>Lorem Ipsum Generator</h1>
 	<form action="/ligenerator" method="POST">
 			<div id='lorem-form'>		 
 				<label for='number_of_wp'>Generate words or paragraphs?</label><br>

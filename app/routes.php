@@ -39,21 +39,29 @@ Route::post('rugenerator', function()
 	//loop through to append as many users as requested to $random_users
 	for ($i=0; $i < $number_of_users; $i++)
 	{
-		$random_users .= "<h2>".$faker->name."</h2>"	;	
+		//get the name from the Faker package {object?}
+		$random_users .= "<h2>".$faker->name."</h2>";	
+		
+		// see if user checked date of birth 
 		if(isset($include_dob))
 		{
+			// add date of birth to the user with styling
 			$random_users .= "<span style='color:blue'>DOB: <em>".$faker->date($format = 'Y-m-d', $max = 'now')."</em></span><br>";
 		}
 		
+		// see if user checked biography 
 		if(isset($include_bio))
 		{
+			// add random text as biography
 			$random_users .= $faker->text."<br>";
 		}
+		
+		// seperate each user created a small line for clarity
 		$random_users .= "<hr style='width:30px'>"	;	
 		
 	}
 	
-		
+	// append the random user(s) generated to the rugenerator page, within results	
 	return View::make('/rugenerator')->with('results',$random_users);
 	
 });
