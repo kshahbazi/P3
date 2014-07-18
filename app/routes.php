@@ -76,20 +76,39 @@ Route::get('ligenerator', function() {
 // the results for the lorem ipsum generator
 Route::post('ligenerator', function()
 {
-	// get form input , i.e. number of paragraphs 
+	// get requested number of words or paragraphs 
 	$number_of_wp = Input::get('number_of_wp');
 	
 	// set the initial result text to empty
 	$lorem_text ="";
 	
+	// set to either create random Words or random Paragraphs
+	$words_or_paragraphs = Input::get('words_or_paragraphs');
+
 	//use Badcow package to generate text
 	$generator = new Badcow\LoremIpsum\Generator();
 	$paragraphs = $generator->getParagraphs($number_of_wp);
+	$words = $generator->getRandomWords($number_of_wp);
 	
-	//loop through to append as many paragraphs as requested to $lorem_text
+	/*//loop through to append as many paragraphs as requested to $lorem_text
 	for ($i=0; $i < $number_of_wp; $i++)
 	{
-			$lorem_text .= "<p>".$paragraphs[$i]."</p><br>"	;	
+			$lorem_text .= "<p>".$paragraphs[$i]."</p><hr style='width:30px'>";	
+	}*/
+	
+	//loop through to append as many words or paragraphs as requested to $lorem_text
+	for ($i=0; $i < $number_of_wp; $i++)
+	{
+		// if user requested paragraphs
+		if($words_or_paragraphs == 'Paragraphs')
+		{
+			$lorem_text .= "<hr style='width:30px'><p>".$paragraphs[$i]."</p>";	
+		}
+		// otherwise user requested random Words 
+		else
+		{
+			$lorem_text .= $words[$i]." ";		
+		}
 	}
 	
 	// append the generated text to the ligenerator page, within results	

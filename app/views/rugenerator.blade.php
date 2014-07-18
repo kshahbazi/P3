@@ -16,7 +16,7 @@
 				<input type="checkbox" name="include_bio" value="include_bio">Include biography<br> 
             </div>
 		
-			<input type='submit' class='btn btn-default' value='Generate Users'>
+			<input type='submit' class='btn btn-default' value='Generate Users'><hr>
             					
 	</form>
 	@if(isset($results))
